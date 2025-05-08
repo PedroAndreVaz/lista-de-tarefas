@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>Lista de Tarefas Simples</title>
+  <style>
+    /* Reset e estilo base */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+      margin: 0;
+      padding: 20px;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+    }
+    .container {
+      background: #1f1f2e;
+      border-radius: 12px;
+      width: 100%;
+      max-width: 400px;
+      padding: 20px 25px 30px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-weight: 700;
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+    }
+    form {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    input[type="text"] {
+      flex-grow: 1;
+      padding: 10px 15px;
+      border-radius: 6px;
+      border: none;
+      font-size: 1rem;
+      outline: none;
+      color: #333;
+    }
+    button {
+      background: #2575fc;
+      border: none;
+      border-radius: 6px;
+      padding: 10px 20px;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      flex-shrink: 0;
+    }
+    button:hover, button:focus {
+      background: #1a54d9;
+    }
+    ul#todo-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+    ul#todo-list li {
+      background: #2c2c44;
+      border-radius: 8px;
+      padding: 12px 15px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1rem;
+      word-break: break-word;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+      cursor: default;
+      user-select: none;
+      transition: background-color 0.3s ease;
+    }
+    ul#todo-list li.completed {
+      color: #999;
+      text-decoration: line-through;
+      background: #3a3a5c;
+    }
+    ul#todo-list li button.delete-btn {
+      background: transparent;
+      border: none;
+      color: #ff6b6b;
+      font-size: 1.2rem;
+      cursor: pointer;
+      padding: 0 8px;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+    ul#todo-list li button.delete-btn:hover,
+    ul#todo-list li button.delete-btn:focus {
+      background: #ff4c4c;
+      color: #fff;
+      outline: none;
+    }
+    @media (max-width: 400px) {
+      body {
+        padding: 15px 10px;
+      }
+      .container {
+        max-width: 100%;
+        padding: 18px 15px 25px;
+      }
+      h1 {
+        font-size: 1.6rem;
+      }
+      button {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+      }
+      ul#todo-list li {
+        font-size: 0.95rem;
+        padding: 10px 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="container" role="main" aria-label="Lista de tarefas simples">
+    <h1>Lista de Tarefas</h1>
+    <form id="form-tarefa" aria-label="Adicionar nova tarefa">
+      <input type="text" id="input-tarefa" placeholder="Digite uma tarefa" aria-required="true" autocomplete="off" />
+      <button type="submit" aria-label="Adicionar tarefa">Adicionar</button>
+    </form>
+    <ul id="lista-tarefas" aria-live="polite" aria-relevant="additions removals"></ul>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
+</content>
+</create_file>
